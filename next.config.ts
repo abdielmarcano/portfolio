@@ -1,7 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async redirects() {
+    return [
+      {
+        source: "/projects/velmora-strategy-group-portal",
+        destination: "/projects/crown-reserve-systems-portal",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

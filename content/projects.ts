@@ -402,7 +402,7 @@ export const projects: Project[] = [
     current: false,
   },
   {
-    slug: "velmora-strategy-group-portal",
+    slug: "crown-reserve-systems-portal",
     title: "Crown Reserve Systems Portal",
     dates: "Nov 2025 - Present",
     tags: ["Software"],
@@ -661,5 +661,5 @@ export function getProjectBySlug(slug: string): Project | undefined {
 }
 
 export function getFeaturedSlugs(): string[] {
-  return ["pwnboxer", "cyclops", "ultrasonic-range-finder", "velmora-strategy-group-portal"];
+  return ["pwnboxer", "cyclops", "ultrasonic-range-finder", "crown-reserve-systems-portal"];
 }
