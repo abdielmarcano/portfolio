@@ -11,8 +11,8 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/abdiel-marcano/",
   github: "https://github.com/TheBackDimple",
   resume: {
-    software: "/media/resume-embedded.pdf",
-    embedded: "/media/resume-software.pdf",
+    software: "/media/resume-software.pdf",
+    embedded: "/media/resume-embedded.pdf",
   },
   education: {
     school: "University of Central Florida",
