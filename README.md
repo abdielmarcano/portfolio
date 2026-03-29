@@ -1,51 +1,44 @@
-# Abdiel Marcano - Portfolio
+# 🌐 Portfolio Website
 
-Personal portfolio site: **Computer Engineering student building secure full-stack + embedded systems.**  
-Target roles: Software + Embedded/Firmware.
+A custom developer portfolio built from scratch in Next.js — structured around 
+technical credibility with consistent project writeups, key metrics, architecture 
+sections, and media galleries for each project.
 
-## Tech stack
+**Live Site:** [abdiel-portfolio.vercel.app](https://abdiel-portfolio.vercel.app)
 
-- **Next.js 16** (App Router) + **TypeScript** + **Tailwind CSS**
-- **Framer Motion** (subtle animations), **lucide-react** icons
-- Content in `/content/*.ts` (no backend)
-- Deployable to **Vercel** (static/SSG)
+---
 
-## Run locally
+## 🛠️ Built With
 
+| Layer | Technology |
+|---|---|
+| Framework | Next.js · React |
+| Language | TypeScript |
+| Styling | Tailwind CSS |
+| Deployment | Vercel |
+
+---
+
+## 📁 Structure
+
+Each project is defined as a structured data object and rendered through shared 
+page components — keeping content and presentation cleanly separated.
+
+---
+
+## 🚀 Running Locally
 ```bash
+git clone https://github.com/TheBackDimple/portfolio.git
+cd portfolio
 npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+Open [http://localhost:3000](http://localhost:3000) to view it.
 
-## Build
+---
 
-```bash
-npm run build
-npm start
-```
+## 👤 Author
 
-Build must complete with no errors (`npm run build`).
-
-## Deploy to Vercel
-
-1. Push the repo to GitHub (or connect your Git provider in Vercel).
-2. In [Vercel](https://vercel.com), click **Add New** → **Project** and import this repository.
-3. Leave **Build Command** as `npm run build` and **Output Directory** as default.
-4. Ensure **Root Directory** is the folder that contains `package.json` (this repo root).
-5. Deploy. No environment variables or backend required.
-
-## Project structure
-
-- **`/content`** - Typed content: `profile.ts`, `projects.ts`
-- **`/src/app`** - App Router pages: Home, Projects, Project Detail, About, Contact
-- **`/src/components`** - Navbar, Footer, ProjectCard, MediaGallery, HomePageClient
-- **`/public/media`** - Images and PDFs (headshot, project media, resumes)
-
-## Resumes
-
-- Software: `/media/resume-software.pdf`
-- Embedded: `/media/resume-embedded.pdf`
-
-Links are in the profile and home CTAs.
+**Abdiel Marcano** — [Portfolio](https://abdiel-portfolio.vercel.app) · 
+[LinkedIn](https://linkedin.com/in/abdiel-marcano)
