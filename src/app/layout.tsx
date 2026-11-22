@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s | Abdiel Marcano",
   },
   description:
-    "Computer Engineering student building secure full-stack and embedded systems. Software and embedded/firmware roles.",
+    "UCF B.S. Computer Engineering graduate building secure full-stack, embedded systems, and hardware-integrated products. Software, embedded, and systems-integration roles.",
   openGraph: {
     type: "website",
   },

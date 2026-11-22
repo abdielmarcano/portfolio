@@ -1,6 +1,6 @@
 # Abdiel Marcano - Portfolio
 
-Personal portfolio site: **Computer Engineering student building secure full-stack + embedded systems.**  
+Personal portfolio site: **UCF B.S. Computer Engineering graduate — full-stack/backend, embedded systems, and hardware integration.**  
 Target roles: Software + Embedded/Firmware.
 
 ## Tech stack
@@ -47,5 +47,6 @@ Build must complete with no errors (`npm run build`).
 
 - Software: `/media/resume-software.pdf`
 - Embedded: `/media/resume-embedded.pdf`
+- Hardware: `/media/resume-hardware.pdf`
 
 Links are in the profile and home CTAs.

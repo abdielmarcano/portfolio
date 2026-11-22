@@ -20,7 +20,7 @@ const cards = [
   },
   {
     label: "GitHub",
-    value: "TheBackDimple",
+    value: "abdielmarcano",
     href: profile.github,
     icon: Github,
   },

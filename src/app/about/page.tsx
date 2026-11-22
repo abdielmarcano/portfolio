@@ -28,6 +28,7 @@ const skillGroups = [
       "Arduino",
       "ESP32",
       "Raspberry Pi",
+      "MSP microcontroller firmware (C)",
       "PCB Design",
       "KiCad",
       "Analog Circuits",
@@ -60,14 +61,36 @@ export default function AboutPage() {
         <h2 className="mb-3 text-lg font-semibold text-zinc-900 dark:text-zinc-50">
           Bio
         </h2>
-        <p className="text-zinc-600 dark:text-zinc-400">
-          I&apos;m a Computer Engineering student at the University of Central
-          Florida with a focus on both software and embedded systems. I build
-          secure full-stack applications, REST APIs with proper auth and RBAC,
-          and embedded/firmware projects from PCB design to sensor integration
-          and computer vision. I enjoy bridging the gap between web services and
-          hardware.
-        </p>
+        <div className="space-y-4 text-zinc-600 dark:text-zinc-400">
+          <p>
+            I&apos;m a University of Central Florida B.S. Computer Engineering
+            graduate (May 2026) with experience across full-stack/backend
+            development, embedded systems, electronics, and hardware
+            integration. I build secure APIs and multi-tenant web platforms,
+            and I also take projects from schematic and PCB through firmware
+            and system bring-up.
+          </p>
+          <p>
+            At{" "}
+            <span className="font-medium text-zinc-800 dark:text-zinc-200">
+              35 Technologies
+            </span>
+            , I am Wire Harness Assembly Lead — promoted within four months —
+            coordinating an 11-person team and having trained 12 technicians.
+            Under contract as Lead Full-Stack Developer at{" "}
+            <span className="font-medium text-zinc-800 dark:text-zinc-200">
+              Crown Reserve Systems
+            </span>
+            , I built a privately tested multi-tenant platform with Next.js,
+            Supabase, and PostgreSQL. With my senior design team I earned UCF
+            Best Electrical and Computer Engineering Project for PwnBoxer.
+          </p>
+          <p>
+            C programming shows up in real firmware work — including MSP
+            microcontroller firmware written in C for my Custom Ultrasonic
+            Range Finder — not only in coursework.
+          </p>
+        </div>
       </section>
 
       <section className="mb-10">
@@ -78,7 +101,8 @@ export default function AboutPage() {
           {profile.education.school}
         </p>
         <p className="text-zinc-600 dark:text-zinc-400">
-          B.S. Computer Engineering · GPA {profile.education.gpa}
+          {profile.education.degree} · Graduated {profile.education.graduated} ·
+          GPA {profile.education.gpa}
         </p>
       </section>
 

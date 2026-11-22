@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { profile } from "content/profile";
 
 export function Footer() {

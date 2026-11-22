@@ -26,9 +26,9 @@ const highlights = [
 ];
 
 const proofStats = [
+  { value: "Best ECE Project — UCF Spring 2026", label: "PwnBoxer Award" },
   { value: "10 Concurrent Uploads Tested", label: "Load Tested" },
-  { value: "~12 REST Endpoints", label: "API Surface" },
-  { value: "Range Validated: 2000 mm", label: "Ultrasonic" },
+  { value: "Range Validated: ~2000 mm", label: "Ultrasonic" },
   { value: "Award: Most Complete", label: "Game Jam" },
 ];
 
@@ -36,11 +36,23 @@ const timeline = [
   {
     type: "Education",
     title: "University of Central Florida",
-    detail: `B.S. Computer Engineering · GPA ${profile.education.gpa}`,
+    detail: `${profile.education.degree} · Graduated ${profile.education.graduated} · GPA ${profile.education.gpa}`,
   },
   {
     type: "Experience",
-    title: "Organizations",
+    title: "Wire Harness Assembly Lead — 35 Technologies",
+    detail:
+      "Promoted within four months; coordinate an 11-person team and have trained 12 technicians.",
+  },
+  {
+    type: "Experience",
+    title: "Lead Full-Stack Developer (Contract) — Crown Reserve Systems",
+    detail:
+      "Privately tested multi-tenant portal with Next.js, Supabase, and PostgreSQL.",
+  },
+  {
+    type: "Organizations",
+    title: "Campus Involvement",
     detail: profile.organizations.join(" · "),
   },
 ];
@@ -120,7 +132,7 @@ export function HomePageClient() {
               className="inline-flex items-center gap-2 rounded-full border border-zinc-300 bg-white px-5 py-2.5 text-sm font-medium text-zinc-700 transition hover:bg-zinc-50 dark:border-zinc-600 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800"
             >
               <FileText className="h-4 w-4" />
-              Resume (Software)
+              Software Resume
             </a>
             <a
               href={profile.resume.embedded}
@@ -129,7 +141,16 @@ export function HomePageClient() {
               className="inline-flex items-center gap-2 rounded-full border border-zinc-300 bg-white px-5 py-2.5 text-sm font-medium text-zinc-700 transition hover:bg-zinc-50 dark:border-zinc-600 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800"
             >
               <FileText className="h-4 w-4" />
-              Resume (Embedded)
+              Embedded Resume
+            </a>
+            <a
+              href={profile.resume.hardware}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-zinc-300 bg-white px-5 py-2.5 text-sm font-medium text-zinc-700 transition hover:bg-zinc-50 dark:border-zinc-600 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800"
+            >
+              <FileText className="h-4 w-4" />
+              Hardware Resume
             </a>
             <Link
               href="/contact"
@@ -213,12 +234,12 @@ export function HomePageClient() {
                   PwnBoxer
                 </h2>
                 <p className="mt-4 text-zinc-600 dark:text-zinc-400">
-                  Secure device-to-cloud reporting platform with authenticated uploads, report generation, admin device management, and downloadable security artifacts. Built with Node.js, Express, Prisma, and PostgreSQL; supports JWT, RBAC, and revocable API keys for devices.
+                  Secure device-to-cloud reporting platform with authenticated uploads, report generation, admin device management, and downloadable security artifacts. Built with Node.js, Express, Prisma, and PostgreSQL; supports JWT, RBAC, and revocable API keys for devices. Won Best Electrical and Computer Engineering Project at the UCF Spring 2026 Senior Design Showcase.
                 </p>
                 <ul className="mt-4 space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
                   <li className="flex gap-2">
                     <span className="text-zinc-400 dark:text-zinc-500">•</span>
-                    Secure authenticated uploads from users and devices
+                    Primary owner of the full-stack security reporting platform
                   </li>
                   <li className="flex gap-2">
                     <span className="text-zinc-400 dark:text-zinc-500">•</span>
@@ -226,7 +247,7 @@ export function HomePageClient() {
                   </li>
                   <li className="flex gap-2">
                     <span className="text-zinc-400 dark:text-zinc-500">•</span>
-                    Downloadable structured PDF report artifacts
+                    Contributed to Raspberry Pi CM4 / ESP32-S3 communication
                   </li>
                 </ul>
                 <div className="mt-6 flex flex-wrap gap-3">
