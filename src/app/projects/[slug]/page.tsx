@@ -40,8 +40,18 @@ export default async function ProjectDetailPage({ params }: Props) {
   const project = getProjectBySlug(slug);
   if (!project) notFound();
 
-  const { links, sections, metrics, media, heroImage, privateRepo, noRepo, confidentialityNote, architectureSteps } =
-    project;
+  const {
+    links,
+    sections,
+    metrics,
+    media,
+    heroImage,
+    localVideo,
+    privateRepo,
+    noRepo,
+    confidentialityNote,
+    architectureSteps,
+  } = project;
   const hero = heroImage || project.thumbnail;
   const linkBtn =
     "inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-4 py-2 text-sm font-medium text-zinc-700 hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800";
@@ -75,13 +85,35 @@ export default async function ProjectDetailPage({ params }: Props) {
         <div className="relative mb-8 aspect-video w-full overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-100 dark:border-zinc-800 dark:bg-zinc-800">
           <Image
             src={hero}
-            alt=""
+            alt={`${project.title} hero`}
             fill
             className="object-cover"
             priority
             sizes="(max-width: 1024px) 100vw, 896px"
           />
         </div>
+      )}
+
+      {localVideo && (
+        <section className="mb-8">
+          <div className="overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-100 dark:border-zinc-800 dark:bg-zinc-800">
+            <video
+              className="aspect-video w-full bg-black"
+              controls
+              playsInline
+              preload="metadata"
+              poster={localVideo.poster}
+            >
+              <source src={localVideo.src} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          {localVideo.caption && (
+            <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+              {localVideo.caption}
+            </p>
+          )}
+        </section>
       )}
 
       {/* Key metrics */}
