@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { Search, X } from "lucide-react";
-import { projects } from "content/projects";
+import { getFeaturedSlugs, projects } from "content/projects";
 import type { Project, ProjectTag } from "content/projects";
 import { ProjectCard } from "@/components/ProjectCard";
 
@@ -17,10 +17,13 @@ const allTags: ProjectTag[] = [
   "AI",
   "Hardware",
   "Firmware",
-  "In Progress",
 ];
 
 type SortOption = "featured" | "recent";
+
+const featuredOrder = getFeaturedSlugs();
+const featuredRank = new Map(featuredOrder.map((slug, i) => [slug, i]));
+const projectOrder = new Map(projects.map((p, i) => [p.slug, i]));
 
 /** Sort key for Recent: current first, then by date descending (endDate or startDate). */
 function compareByRecent(a: Project, b: Project): number {
@@ -32,6 +35,18 @@ function compareByRecent(a: Project, b: Project): number {
   const dateCmp = bDate.localeCompare(aDate);
   if (dateCmp !== 0) return dateCmp;
   return 0;
+}
+
+/** Featured first in configured order; remaining projects keep existing relative order. */
+function compareByFeatured(a: Project, b: Project): number {
+  const aRank = featuredRank.has(a.slug)
+    ? featuredRank.get(a.slug)!
+    : Number.POSITIVE_INFINITY;
+  const bRank = featuredRank.has(b.slug)
+    ? featuredRank.get(b.slug)!
+    : Number.POSITIVE_INFINITY;
+  if (aRank !== bRank) return aRank - bRank;
+  return (projectOrder.get(a.slug) ?? 0) - (projectOrder.get(b.slug) ?? 0);
 }
 
 export default function ProjectsPage() {
@@ -54,7 +69,7 @@ export default function ProjectsPage() {
       return matchSearch && matchTags;
     });
     if (sort === "featured") {
-      return [...list].sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
+      return [...list].sort(compareByFeatured);
     }
     return [...list].sort(compareByRecent);
   }, [search, selectedTags, sort]);

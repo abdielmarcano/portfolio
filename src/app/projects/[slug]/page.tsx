@@ -46,6 +46,7 @@ export default async function ProjectDetailPage({ params }: Props) {
     metrics,
     media,
     heroImage,
+    heroObjectPosition,
     localVideo,
     privateRepo,
     noRepo,
@@ -88,6 +89,12 @@ export default async function ProjectDetailPage({ params }: Props) {
             alt={`${project.title} hero`}
             fill
             className="object-cover"
+            style={{
+              objectPosition:
+                heroObjectPosition ??
+                project.thumbnailObjectPosition ??
+                "center",
+            }}
             priority
             sizes="(max-width: 1024px) 100vw, 896px"
           />

@@ -10,8 +10,7 @@ export type ProjectTag =
   | "AI"
   | "Unreal Engine"
   | "Hardware"
-  | "Firmware"
-  | "In Progress";
+  | "Firmware";
 
 export interface ProjectLink {
   github?: string;
@@ -42,6 +41,10 @@ export interface Project {
   media: { src: string; alt: string }[];
   thumbnail: string;
   heroImage?: string;
+  /** CSS object-position for card thumbnails (e.g. "center 30%") */
+  thumbnailObjectPosition?: string;
+  /** CSS object-position for project-page hero */
+  heroObjectPosition?: string;
   /** Optional inline HTML5 video (no autoplay) */
   localVideo?: ProjectLocalVideo;
   /** Private repo: show badge and "Code samples available upon request" */
@@ -116,8 +119,10 @@ export const projects: Project[] = [
       { src: "/media/pwnboxer-cm4.jpg", alt: "Raspberry Pi CM4 setup used for embedded integration and device workflow testing" },
       { src: "/media/pwnboxer-integration-prototype.jpg", alt: "Early Pi and ESP32 prototype setup used during communication and display integration experiments" },
     ],
-    thumbnail: "/media/pwnboxer-report.png",
-    heroImage: "/media/pwnboxer-report.png",
+    thumbnail: "/media/pwnboxer-cm4.jpg",
+    heroImage: "/media/pwnboxer-cm4.jpg",
+    thumbnailObjectPosition: "center 35%",
+    heroObjectPosition: "center 32%",
     sections: {
       problem:
         "We needed a secure workflow for handling uploads from users and authenticated devices, generating structured reports, and managing device identities without mixing data across users or report runs.",
@@ -554,8 +559,10 @@ export const projects: Project[] = [
         alt: "Car HUD Pi Android companion app presets configuration",
       },
     ],
-    thumbnail: "/media/carhud-night-display.jpeg",
+    thumbnail: "/media/carhud-dashboard-prototype.jpeg",
     heroImage: "/media/carhud-night-display.jpeg",
+    thumbnailObjectPosition: "center 40%",
+    heroObjectPosition: "center 45%",
     localVideo: {
       src: "/media/carhud-in-car-demo-landscape.mp4",
       caption:
