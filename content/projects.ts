@@ -112,7 +112,7 @@ export const projects: Project[] = [
       { src: "/media/pwnboxer-dashboard.png", alt: "PwnBoxer dashboard with uploaded reports" },
       { src: "/media/pwnboxer-admin.png", alt: "PwnBoxer admin device management screen" },
       { src: "/media/pwnboxer-login.png", alt: "PwnBoxer login screen" },
-      { src: "/media/pwnboxer-esp32.jpg", alt: "ESP32 development board used for device-side prototyping and communication testing" },
+      { src: "/media/pwnboxer-esp32.JPG", alt: "ESP32 development board used for device-side prototyping and communication testing" },
       { src: "/media/pwnboxer-cm4.jpg", alt: "Raspberry Pi CM4 setup used for embedded integration and device workflow testing" },
       { src: "/media/pwnboxer-integration-prototype.jpg", alt: "Early Pi and ESP32 prototype setup used during communication and display integration experiments" },
     ],
